@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Friendly Editor</title>
+   <script src="https://unpkg.com/prettier@2.6.2/standalone.js"></script>
+    <!--
+<script src="https://cdn.jsdelivr.net/npm/prettier@2.6.2/parser-html.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.3/beautify.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.3/beautify-css.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.3/beautify-html.js"></script>
+<link rel="stylesheet" href="/index.3a01df49.css">
+  </head>
+  <body>
+<div class="friendly">
+     <div id="topbar" style="height: 2em; color: #fff; background: teal"></div>
+  <div class="layout">    
+    <section id="guidesection" style="resize: horizontal; overflow: hidden">
+
+      <div class="tutorial">
+
+        <details>
+        <summary><strong>First project</strong></summary>
+        <ul>
+          <li>Click 🎦 to enter fullscreen mode.</li>
+<li>
+Add this code between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>:
+  <pre class="code" draggable="true" style="cursor: grab"><header>
+  <h1>The title</h1>
+</header></pre>
+You can type the code yourself, drag it to the editor, or click on the code to add it at the cursor position.  
+</li>
+          <li>Change the title. It will update in the output view.</li>
+          <li>Find <code>header</code> in the second code pane. It uses the <code>--header</code> variable to set the header background colour. Click on the square of colour next to the header variable and find a colour you like.</li>
+          <li>Change the colour for the <code>h1</code> text.</li>
+          <li>Find the <code>font-size</code> setting for <code>h1</code>, hold down the 'Alt' key and click where it says <code>2rem</code>. Move your mouse left and right until you are happy with the size.</li>
+          <li> Click ✍️ to create a paragraph in the <code>html</code> editor. Then type <code>lorem</code> then tap the 'Tab' key to generate a paragraph of placeholder text.</li>
+          <li>Click 🎀 to make your code pretty. Notice how your code is lined up. </li>     
+          <li>Drag a <code>p img</code> <strong></strong>Snippet under the introduction. Look at where the pink cursor appears, this is where your code will appear. </li>
+        </ul>
+
+      </details>  
+      </div>
+
+      <div class="snippets">
+<details>
+        <summary><strong>Snippets</strong></summary>
+  Drag snippets to editor to add them. 
+  <details class="snippet" draggable="true">
+    <summary>Header</summary><pre class="code" draggable="true" style="cursor: grab"><header>
+  <h1>The title</h1>
+</header></pre></details>
+      
+     <details class="snippet" draggable="true">
+    <summary>list emoji</summary><pre class="code" draggable="true" style="cursor: grab" id="code1">  <section class="wrap">
+    <ol style="width: 21rem">
+      <li>First</li>
+      <li>Second</li>
+      <li>Third</li>
+    </ol>
+    <div style="width: 7rem; font-size: 6rem">😋</div>
+  </section></pre></details>
+
+    <details class="snippet" draggable="true">
+    <summary>p img</summary><pre class="code" draggable="true" style="cursor: grab"><section class="wrap">
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, cumque!</p>
+  <img src="/placeholder.ec8ccba6.jpg" alt=" ">
+</section>
+</pre></details>
+
+    <details class="snippet" draggable="true">
+    <summary>Footer</summary><pre class="code" draggable="true" style="cursor: grab"><footer>
+  <p>Footer text</p>
+</footer></pre></details>
+</details>
+</div>
+    </section>
+
+    <section id="editorsection" style="resize: horizontal; overflow: hidden">
+<button id="undo">↩️</button><button id="redo">↪️</button><button id="strong"><strong>B</strong></button><button id="save">💾</button><button id="load">📄</button><button id="ul">⚫</button><button id="ol">1.</button><button id="pretty">🎀</button><button id="paragraph">✍️</button><button id="quote">💬</button><button id="comment">ℹ️</button><button id="fullscreen">🎦</button>
+<script>var fullscreen = document.getElementById('fullscreen');
+fullscreen.addEventListener('click', function() {
+    document.documentElement.requestFullscreen();
+}, false);
+
+</script>
+      <div id="editor"></div>
+      <script src="/index.3d214d75.js" defer=""></script>
+      <section>
+      <button class="htmlcommand"><code>section</code></button><button class="htmlcommand"><code>h1</code></button><button class="htmlcommand"><code>h2</code></button><button class="htmlcommand"><code>h3</code></button><button class="htmlcommand"><code>div</code></button><button class="htmlcommand"><code>span</code></button><button class="htmlcommand"><code>p</code></button><button class="htmlcommand"><code>img</code></button><button class="htmlcommand"><code>a</code></button><button class="htmlcommand"><code>ul</code></button><button class="htmlcommand"><code>ol</code></button><button class="htmlcommand"><code>li</code></button><button class="htmlcommand"><code>blockquote</code></button><button class="htmlcommand"><code>&lt;!--</code></button>
+      </section>
+      <div width="100%" style="height: 1.5rem; background: teal"></div>
+       <div id="csseditor"></div>
+    </section>     
+     
+    <section id="outputsection">
+      <div id="output"></div>
+    </section>
+     </div>
+</div>
+     <input id="fileid" type="file" hidden="">
+     <pre id="startercss" hidden="">:root {
+--accent: #824703;
+--text: #c729b2ff;
+--header: #f0b30a;
+--background: #ffffff;
+--dark: #412234;
+}
+
+header, footer {
+  margin: 0 auto;
+  min-height: 3rem;
+  text-align: center;
+  background: var(--header);
+}
+
+h1 {
+  color: var(--accent);
+  margin: 0rem;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.wrap > p, .wrap > img {
+  width: 16rem;
+}
+
+.wrap > p {
+  font-size: 1rem;
+  color: var(--text);
+  padding: 1.2rem;
+  font-family: Helvetica, sans-serif;
+}
+
+p {
+  max-width: 34rem;
+  margin: 0 auto;
+}
+</pre>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+.cm-gutters {
+  margin: 1px;
+}
+
+.cm-scroller {
+  overflow: auto;
+}
+
+.cm-wrap {
+  border: 1px solid silver;
+}
+
+.cm-editor {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.friendly .layout {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+html, body, .friendly .layout {
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .friendly #editorsection {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .friendly .layout {
+    flex-wrap: wrap;
+  }
+
+  .friendly #guidesection {
+    min-width: 20rem;
+    height: 6rem;
+    overflow: scroll;
+  }
+
+  .friendly #output {
+    min-width: 20rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .friendly #editorsection {
+    width: 35rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .friendly #guidesection {
+    max-height: 95vh;
+    min-width: 20rem;
+  }
+
+  .friendly #editorsection {
+    max-height: 95vh;
+  }
+
+  .friendly #outputsection {
+    flex-grow: 6;
+  }
+
+  .friendly #topbar {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .friendly #guidesection {
+    width: 20rem;
+  }
+
+  .friendly button {
+    vertical-align: top;
+    height: 1.5rem;
+    text-align: center;
+    margin: 0;
+    line-height: 1.5rem;
+  }
+
+  .friendly #editor .cm-indentation-marker, .friendly #editor, .friendly #csseditor {
+    border-left: 3px solid #00885580;
+  }
+
+  .friendly #editor .cm-editor, .friendly #csseditor .cm-editor {
+    height: 18rem;
+    caret-color: #c71585 !important;
+  }
+
+  .friendly .tutorial .code {
+    width: 90%;
+    box-shadow: 1px 1px 8px -2px #000;
+  }
+
+  .csscolor {
+    margin: 0 auto;
+  }
+
+  .chooseoption {
+    visibility: visible;
+    margin: 0 auto;
+    font-family: monospace;
+    display: block;
+  }
+
+  .friendly .snippet .cm-scroller {
+    overflow: hidden;
+  }
+
+  .friendly .cm-activeLine {
+    font-size: 1.1rem;
+  }
+}
+
+/*# sourceMappingURL=index.3a01df49.css.map */
